@@ -13,6 +13,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       vue(),
       Components({
         resolvers: [VantResolver()],
+        dirs: "./types/components.d.ts",
       }),
       AutoImport({
         /* options */
@@ -22,6 +23,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           /\.vue$/,
           /\.vue\?vue/, // .vue
         ],
+        dts: "./types/auto-imports.d.ts",
       }),
       // 配置vconsole生产环境不启用
       viteVConsole({
@@ -56,6 +58,6 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         },
       },
       host: true,
-    }
+    },
   };
 };
